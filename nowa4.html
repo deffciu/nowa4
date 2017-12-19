@@ -118,7 +118,13 @@
             padding-top: 0 !important;
         }
     </style>
-    <script type="text/javascript" class="silex-script"></script>
+    <script type="text/javascript" class="silex-script">
+        $(function() {
+            var BV = new $.BigVideo();
+            BV.init();
+            BV.show('http://vjs.zencdn.net/v/oceans.mp4');
+        });
+    </script>
 
     <style class="silex-inline-styles" type="text/css">
         .silex-id-1439555806958-90 {
