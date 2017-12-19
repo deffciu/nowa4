@@ -118,7 +118,18 @@
             padding-top: 0 !important;
         }
     </style>
-    <script type="text/javascript" class="silex-script"></script>
+    <script type="text/javascript" class="silex-script">
+        document.write('<scr'+'ipt type="text/javascript" charset="utf-8" src="jquery.tubular.1.0.js"></scr'+'ipt>');
+        $(function(){
+            // add the video on the body
+            $('body').tubular({videoId: 'ab0TSkLe-E0', start: 3});  
+            // keep the main container clickable
+            $('.background').css('z-index', 10);
+            // make the video take the full window
+            $('body').css('padding', 0);
+            $('body').css('width', 100);
+        })
+    </script>
 
     <style class="silex-inline-styles" type="text/css">
         .silex-id-1439555806958-90 {
@@ -637,6 +648,8 @@
 
 
 
+
+
     <style id="current-page-style">
         .page-use-backnode {
             display: inherit;
@@ -932,6 +945,8 @@
             </div>
         </div>
     </div>
+
+
 
 
 
