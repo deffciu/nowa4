@@ -122,11 +122,12 @@
         document.write('<scr'+'ipt type="text/javascript" charset="utf-8" src="jquery.tubular.1.0.js"></scr'+'ipt>');
         $(function(){
             // add the video on the body
-            $('#chuj').tubular({videoId: 'ab0TSkLe-E0', start: 3});  
+            $('body').tubular({videoId: 'ab0TSkLe-E0', start: 3});  
             // keep the main container clickable
             $('.background').css('z-index', -99999);
             // make the video take the full window
-            $('#chuj').css('padding', 50);
+            $('body').css('padding', 50);
+            $('body').width(300)
         })
     </script>
 
