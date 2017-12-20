@@ -120,6 +120,38 @@
         body {
             padding-top: 0 !important;
         }
+        
+        .countdown {
+            font-family: 'Roboto';
+            text-transform: uppercase;
+        }
+        
+        .countdown>div {
+            display: inline-block;
+        }
+        
+        .countdown>div>span {
+            display: block;
+            text-align: center;
+        }
+        
+        .countdown-container {
+            margin: 0 3px;
+        }
+        
+        .countdown-container .countdown-heading {
+            font-size: 11px;
+            margin: 3px;
+            color: #666
+        }
+        
+        .countdown-container .countdown-value {
+            font-size: 50px;
+            background: #6273c9;
+            padding: 10px;
+            color: #fff;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4)
+        }
     </style>
     <script type="text/javascript" class="silex-script">
         document.write('<scr'+'ipt type="text/javascript" charset="utf-8" src="jquery.tubular.1.0.js"></scr'+'ipt>');
@@ -774,6 +806,8 @@
     </style>
     <!-- Silex HEAD tag do not remove -->
     <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+    <script src="//code.jquery.com/jquery.min.js"></script>
+    <script src="js/countdown.js"></script>
     <!-- End of Silex HEAD tag do not remove -->
 </head>
 
@@ -870,8 +904,7 @@
 
             <div data-silex-type="html" class="editable-style silex-id-1513800238961-11 html-element page-home-page paged-element" data-silex-id="silex-id-1513800238961-11" style="">
                 <div class="silex-element-content">
-                    <script src="//www.powr.io/powr.js?external-type=html"></script>
-                    <div class="powr-countdown-timer" id="007b93b3_1513800125"></div>
+                    <div class="countdown" data-date="2028-01-01"></div>
                 </div>
             </div>
         </div>
