@@ -744,6 +744,44 @@ $("button").click(function() {
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="countdown.js"></script>
+    <script>
+        // Select all links with hashes
+$('a[href*="#"]')
+  // Remove links that don't actually link to anything
+  .not('[href="#"]')
+  .not('[href="#0"]')
+  .click(function(event) {
+    // On-page links
+    if (
+      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+      && 
+      location.hostname == this.hostname
+    ) {
+      // Figure out element to scroll to
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      // Does a scroll target exist?
+      if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+          scrollTop: target.offset().top
+        }, 1000, function() {
+          // Callback after animation
+          // Must change focus!
+          var $target = $(target);
+          $target.focus();
+          if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+          } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+          };
+        });
+      }
+    }
+  });
+    </script>
     <!-- End of Silex HEAD tag do not remove -->
 </head>
 
@@ -1014,7 +1052,9 @@ $("button").click(function() {
             <div data-silex-type="image" class="editable-style silex-id-1514413952038-5 image-element" data-silex-id="silex-id-1514413952038-5" style=""><img src="div18.png" class="silex-element-content"></div>
             <div data-silex-type="html" class="editable-style silex-id-1514418003898-11 html-element" data-silex-id="silex-id-1514418003898-11" style="">
                 <div class="silex-element-content">
-                    <a name="chapter4"></a>
+                    <div id="chapter4">
+                        <a name="chapter4"></a>
+                    </div>
                 </div>
             </div>
         </div>
