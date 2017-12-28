@@ -728,6 +728,26 @@
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="countdown.js"></script>
+    <script>
+        $(document).ready(function(){
+         
+         $('a[href^="#"]').on('click',function(e){
+          e.preventDefault();
+          
+          var target = this.hash;
+          var $target = $(target);
+          //scroll
+           $('html, body').animate({
+            'scrollTop': $target.offset().top
+           },1000, 'swing',function () {
+            window.location.hash=target;
+           }); 
+           
+         
+         });
+        
+        });
+    </script>
     <!-- End of Silex HEAD tag do not remove -->
 </head>
 
