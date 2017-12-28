@@ -176,6 +176,13 @@ $("button").click(function() {
         scrollTop: $(".second").offset().top},
         'slow');
 });
+
+$('a').click(function(){
+    $('html, body').animate({
+        scrollTop: $( $(this).attr('href') ).offset().top
+    }, 500);
+    return false;
+});
     </script>
 
     <style class="silex-inline-styles" type="text/css">
