@@ -746,6 +746,15 @@ $('a[href^="#"]').click(function () {
     <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans" rel="stylesheet">
     <script src="//code.jquery.com/jquery.min.js"></script>
     <script src="countdown.js"></script>
+    <script>
+        $('a[href^="#"]').click(function () {
+        $('html, body').animate({
+            scrollTop: $('[name="' + $.attr(this, 'href').substr(1) + '"]').offset().top
+        }, 500);
+    
+        return false;
+    });
+    </script>
     <!-- End of Silex HEAD tag do not remove -->
 </head>
 
