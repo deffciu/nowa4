@@ -762,6 +762,25 @@
         
         });
     </script>
+
+    <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
+    <script>
+        window.addEventListener("load", function(){
+        window.cookieconsent.initialise({
+          "palette": {
+            "popup": {
+              "background": "#040d1f",
+              "text": "#67b6ff"
+            },
+            "button": {
+              "background": "#41a6d1",
+              "text": "#000000"
+            }
+          },
+          "theme": "classic"
+        })});
+    </script>
     <!-- End of Silex HEAD tag do not remove -->
 </head>
 
