@@ -763,12 +763,11 @@
         });
     </script>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-    <script src="jquery.cookieConsent.min.js"></script>
     <script>
-        $(function () {
-            $.cookieConsent();
-          });
+        $.cookieBar({
+        fixed: true,
+        acceptOnScroll: 200
+    });
     </script>
     <!-- End of Silex HEAD tag do not remove -->
 </head>
