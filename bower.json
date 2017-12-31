@@ -1,19 +1,39 @@
 {
-  "name": "animsition",
-  "description": "A simple and easy jQuery plugin for CSS animated page transitions.",
-  "keywords": [
-    "css3",
-    "js",
-    "animation",
-    "page transition",
-    "jQuery"
+  "name": "vide",
+  "homepage": "http://vodkabears.github.io/vide/",
+  "authors": [
+    "Ilya Makarov <dfrost.00@gmail.com>"
   ],
-  "homepage": "http://git.blivesta.com/animsition",
-  "main": [
-    "dist/css/animsition.min.css",
-    "dist/js/animsition.min.js"
-  ],
+  "description": "Easy as hell jQuery plugin for video backgrounds.",
+  "main": "dist/jquery.vide.js",
   "ignore": [
-    ".*"
-  ]
+    "**/.*",
+    "examples/",
+    "libs/",
+    "src/",
+    "test/",
+    "*.md",
+    "Gruntfile.js",
+    "package.json",
+    "vide.jquery.json"
+  ],
+  "keywords": [
+    "jquery",
+    "plugin",
+    "jquery-plugin",
+    "video",
+    "background",
+    "ui",
+    "responsive",
+    "declarative"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "*"
+  },
+  "devDependencies": {
+    "qunit": "^1.19.0",
+    "jquery": "jquery#^1.11.3",
+    "jquery2": "jquery#^2.1.4"
+  }
 }

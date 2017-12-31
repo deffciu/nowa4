@@ -1,79 +1,164 @@
-# [Animsition](http://blivesta.github.io/animsition)
+[![NPM version](https://img.shields.io/npm/v/vide.svg?style=flat)](https://npmjs.org/package/vide)
+[![Bower version](https://badge.fury.io/bo/vide.svg)](http://badge.fury.io/bo/vide)
+[![Travis](https://travis-ci.org/VodkaBears/Vide.svg?branch=master)](https://travis-ci.org/VodkaBears/Vide)
+Vide
+====
 
-![Bower version](https://img.shields.io/bower/v/animsition.svg?style=flat-square)
-[![npm version](https://img.shields.io/npm/v/animsition.svg?style=flat-square)](https://www.npmjs.com/package/animsition)
-[![Build Status](https://img.shields.io/travis/blivesta/animsition/master.svg?style=flat-square)](https://travis-ci.org/blivesta/animsition)
+Easy as hell jQuery plugin for video backgrounds.
 
+## Notes
 
-A simple and easy jQuery plugin for CSS animated page transitions.
+* All modern desktop browsers are supported.
+* IE9+
+* iOS plays video from a browser only in the native player. So video for iOS is disabled, only fullscreen poster will be used.
+* Some android devices play video, some not — go figure. So video for android is disabled, only fullscreen poster will be used.
 
+## Instructions
 
-## Demo & Installation
-http://git.blivesta.com/animsition/
+Download it from [GitHub](https://github.com/VodkaBears/Vide/releases/latest) or via Bower:
+`bower install vide`
 
+Include plugin: `<script src="js/jquery.vide.min.js"></script>`
 
-## Development
-
-Install : `nodejs` `npm` `gulp`
-
-```bash
-$ git clone https://github.com/blivesta/animsition.git
-$ cd animsition
-$ git checkout -b patch-1
-$ npm install && gulp
+Prepare your video in several formats like '.webm', '.mp4' for cross browser compatibility, also add a poster with `.jpg`, `.png` or `.gif` extension:
+```
+path/
+├── to/
+│   ├── video.mp4
+│   ├── video.ogv
+│   ├── video.webm
+│   └── video.jpg
 ```
 
-Build
-```bash
-$ gulp build
+Add `data-vide-bg` attribute with a path to the video and poster without extension, video and poster must have the same name. Add `data-vide-options` to pass vide options, if you need it. By default video is muted, looped and starts automatically.
+```html
+<div style="width: 1000px; height: 500px;"
+  data-vide-bg="path/to/video" data-vide-options="loop: false, muted: false, position: 0% 0%">
+</div>
 ```
 
-Build -> Watch
-```bash
-$ gulp
+Also you can set extended path:
+```html
+<div style="width: 1000px; height: 500px;"
+  data-vide-bg="mp4: path/to/video1, webm: path/to/video2, ogv: path/to/video3, poster: path/to/poster"
+  data-vide-options="posterType: jpg, loop: false, muted: false, position: 0% 0%">
+</div>
 ```
 
-## CDN
-[cdnjs](https://cdnjs.com/libraries/animsition)
+In some situations it can be helpful to initialize it with JS because Vide doesn't have mutation observers:
+```js
+$('#myBlock').vide('path/to/video');
+$('#myBlock').vide('path/to/video', {
+...options...
+});
+$('#myBlock').vide({
+  mp4: path/to/video1,
+  webm: path/to/video2,
+  ogv: path/to/video3,
+  poster: path/to/poster
+}, {
+...options...
+});
+$('#myBlock').vide('extended path as a string', 'options as a string');
+```
 
-- dist/css/animsition.css
-- dist/css/animsition.min.css
-- dist/js/animsition.js
-- dist/js/animsition.min.js
+Easy as hell.
 
-## Contributing
+## Options
 
-To contribute to animsition, clone this repo locally and commit your code.  
-Please check that everything works before opening a pull-request.
+Below is a complete list of options and matching default values:
 
+```js
+{
+  volume: 1,
+  playbackRate: 1,
+  muted: true,
+  loop: true,
+  autoplay: true,
+  position: '50% 50%', // Similar to the CSS `background-position` property.
+  posterType: 'detect', // Poster image type. "detect" — auto-detection; "none" — no poster; "jpg", "png", "gif",... - extensions.
+  resizing: true, // Auto-resizing, read: https://github.com/VodkaBears/Vide#resizing
+  bgColor: 'transparent', // Allow custom background-color for Vide div,
+  className: '' // Add custom CSS class to Vide div
+}
+```
 
-## Contributors
-- [@blivesta](https://github.com/blivesta) (Maintainer)
-- [@ungki](https://github.com/ungki) (Maintainer)
-- [@gauravpadia](https://github.com/gauravpadia) (Maintainer)
-- [@munsonbh](https://github.com/munsonbh)
-- [@triq6](https://github.com/triq6)
-- [@shgtkshruch](https://github.com/shgtkshruch)
-- [@vburlak](https://github.com/vburlak)
-- [@wpexplorer](https://github.com/wpexplorer)
-- [@armbull](https://github.com/armbull)
-- [@kkirsche](https://github.com/kkirsche)
-- [@justbartlett](https://github.com/justbartlett)
-- [@brianmontanaweb](https://github.com/brianmontanaweb)
-- [@Superpencil](https://github.com/Superpencil)
-- [@tegansnyder](https://github.com/tegansnyder)
-- [@nvartolomei](https://github.com/nvartolomei)
+## Methods
+
+Below is a complete list of methods:
+
+```js
+// Get instance of the plugin
+var instance = $('#yourElement').data('vide');
+
+// Get video element of the background. Do what you want.
+instance.getVideoObject();
+
+// Resize video background.
+// It calls automatically, if window resize (or element, if you will use something like https://github.com/cowboy/jquery-resize).
+instance.resize();
+
+// Destroy plugin instance
+instance.destroy();
+```
+
+## Resizing
+
+The Vide plugin resizes if the window resizes. If you will use something like https://github.com/cowboy/jquery-resize, it will resize automatically when the container resizes. Or simply use `resize()` method whenever you need.
+
+Set the `resizing` option to false to disable auto-resizing.
+
+## Encoding video
+
+http://diveintohtml5.info/video.html#miro
+
+## Meteor
+
+### Install
+
+```sh
+meteor add vodkabears:vide
+```
+
+### Usage
+
+Because of how meteor renders templates reactively you will need to initialize
+manually for the templates you want to use vide in.
+
+```js
+Template.templateName.onRendered(function() {
+  this.$('#elementName').vide('fileNameWithoutExtension');
+});
+```
+
+Meteor integration by [zimme](https://github.com/zimme).
+
+## Ruby Gem
+
+[Vider](https://github.com/wazery/vider) by Islam Wazery.
 
 ## License
-Released under the [MIT](https://github.com/blivesta/animsition/blob/master/LICENSE.md) license.
 
+```
+The MIT License (MIT)
 
----
+Copyright (c) 2015 Ilya Makarov
 
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-## WordPress plugin
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-### [Page Transition](http://wordpress.org/plugins/page-transition/ "Page Transition")
-- @numixtech
-- [@gauravpadia](https://github.com/gauravpadia)
-- @asalamwp
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
