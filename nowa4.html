@@ -182,74 +182,7 @@
             transition: margin 0.3s, height 0.3s;
         }
     </style>
-    <script type="text/javascript" class="silex-script">
-        var topStores = new FusionCharts({
-            type: 'bar2d',
-            renderAt: 'chart-container',
-            width: '500',
-            height: '350',
-            dataFormat: 'json',
-            dataSource: {
-        "chart": {
-            "caption": "Unemployment Rate in U.S",
-            "subcaption": "U.S Bureau of Labor (Survey 2015)",
-            "yaxisname": "Unemployment Rate",
-            "numbersuffix": "%",
-            "showxaxisline": "0",
-            "placevaluesinside": "0",
-            "aligncaptionwithcanvas": "0",
-            "divlinealpha": "0",
-            "basefontsize": "12",
-            "basefontcolor": "#194920",
-            "valuefontcolor": "#194920",
-            "canvasBgColor": "#f3f5f6",
-            "canvasBgAlpha": "100",
-            "bgColor": "#f3f5f6",
-            "BgAlpha": "100",
-            "palettecolors": "#3A803D",
-            "showyaxisvalues": "0", //Hidden Y-axis value
-            "plottooltext": "$label Rate of Unemployment : $datavalue",
-            "theme": "zune"
-        },
-        "data": [
-            {
-                "label": "High school diploma",
-                "value": "5.4"
-            },
-            {
-                "label": "Doctoral degree",
-                "value": "1.7"
-            },
-            {
-                "label": "Associate's degree",
-                "value": "3.8"
-            },
-            {
-                "label": "Bachelor's degree",
-                "value": "2.8"
-            },
-            {
-                "label": "Some college, no degree",
-                "value": "5.0"
-            },
-            {
-                "label": "Master's degree",
-                "value": "2.4"
-            },
-            {
-                "label": "Less than a high school diploma",
-                "value": "8.0"
-            },
-            {
-                "label": "Professional degree",
-                "value": "1.5"
-            }
-        ]
-    }
-        })
-        .render();
-    });
-    </script>
+    <script type="text/javascript" class="silex-script"></script>
 
     <style class="silex-inline-styles" type="text/css">
         .silex-id-1439555806958-90 {
@@ -1593,7 +1526,36 @@
         return ReturnString;
         }
     </script>
-
+    <script type="text/javascript">
+        window.onload = function () {
+            var chart = new CanvasJS.Chart("chartContainer", {
+        
+              title:{
+                text: "Fruits sold in First Quarter"              
+              },
+              data: [//array of dataSeries              
+                { //dataSeries object
+        
+                 /*** Change type "column" to "bar", "area", "line" or "pie"***/
+                 type: "column",
+                 dataPoints: [
+                 { label: "Round 1 (800K)", y: 0.75 },
+                 { label: "Round 2 (1m)", y: 0.85 },
+                 { label: "Round 3(1.2m)", y: 0.95 },                                    
+                 { label: "Round 4(1.4m)", y: 1.05 },
+                 { label: "Round 5(1.6m)", y: 1.15 }
+                 ]
+            }
+            ],
+         /** Set axisY properties here*/
+            axisY:{
+              prefix: "$",
+            }    
+          });
+        
+            chart.render();
+          }
+    </script>
     <script>
         $(document).ready(function(){
          
@@ -2854,7 +2816,7 @@
             </div>
             <div data-silex-type="html" class="editable-style silex-id-1515712063010-2 html-element" data-silex-id="silex-id-1515712063010-2" style="">
                 <div class="silex-element-content">
-                    <div id="chart-container">FusionCharts will render here</div>
+                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
                 </div>
             </div>
         </div>
