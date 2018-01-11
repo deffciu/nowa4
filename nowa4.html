@@ -183,35 +183,72 @@
         }
     </style>
     <script type="text/javascript" class="silex-script">
-        $("#chart-container").insertFusionCharts({
-            type: "column2d",
-            width: "400",
-            height: "350",
-            dataFormat: "json",
-            dataSource: {
-                chart: {
-                    caption: "Harry's SuperMart",
-                    subCaption: "Top 5 stores in last month by revenue",
-                    numberPrefix: "$",
-                    theme: "ocean"
+        FusionCharts.ready(function () {
+            var topStores = new FusionCharts({
+                type: 'bar2d',
+                renderAt: 'chart-container',
+                width: '500',
+                height: '350',
+                dataFormat: 'json',
+                dataSource: {
+            "chart": {
+                "caption": "Unemployment Rate in U.S",
+                "subcaption": "U.S Bureau of Labor (Survey 2015)",
+                "yaxisname": "Unemployment Rate",
+                "numbersuffix": "%",
+                "showxaxisline": "0",
+                "placevaluesinside": "0",
+                "aligncaptionwithcanvas": "0",
+                "divlinealpha": "0",
+                "basefontsize": "12",
+                "basefontcolor": "#194920",
+                "valuefontcolor": "#194920",
+                "canvasBgColor": "#f3f5f6",
+                "canvasBgAlpha": "100",
+                "bgColor": "#f3f5f6",
+                "BgAlpha": "100",
+                "palettecolors": "#3A803D",
+                "showyaxisvalues": "0", //Hidden Y-axis value
+                "plottooltext": "$label Rate of Unemployment : $datavalue",
+                "theme": "zune"
+            },
+            "data": [
+                {
+                    "label": "High school diploma",
+                    "value": "5.4"
                 },
-                data: [{
-                    label: "Bakersfield Central",
-                    value: "880000"
-                }, {
-                    label: "Garden Groove harbour",
-                    value: "730000"
-                }, {
-                    label: "Los Angeles Topanga",
-                    value: "590000"
-                }, {
-                    label: "Compton-Rancho Dom",
-                    value: "520000"
-                }, {
-                    label: "Daly City Serramonte",
-                    value: "330000"
-                }]
-            }
+                {
+                    "label": "Doctoral degree",
+                    "value": "1.7"
+                },
+                {
+                    "label": "Associate's degree",
+                    "value": "3.8"
+                },
+                {
+                    "label": "Bachelor's degree",
+                    "value": "2.8"
+                },
+                {
+                    "label": "Some college, no degree",
+                    "value": "5.0"
+                },
+                {
+                    "label": "Master's degree",
+                    "value": "2.4"
+                },
+                {
+                    "label": "Less than a high school diploma",
+                    "value": "8.0"
+                },
+                {
+                    "label": "Professional degree",
+                    "value": "1.5"
+                }
+            ]
+        }
+            })
+            .render();
         });
     </script>
 
@@ -2818,8 +2855,7 @@
             </div>
             <div data-silex-type="html" class="editable-style silex-id-1515712063010-2 html-element" data-silex-id="silex-id-1515712063010-2" style="">
                 <div class="silex-element-content">
-                    <div id="chart-container">
-                    </div>
+                    <div id="chart-container">FusionCharts will render here</div>
                 </div>
             </div>
         </div>
