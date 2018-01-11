@@ -1549,37 +1549,38 @@
     </script>
 
     <script type="text/javascript">
-        window.onload = function () {
-            var chart = new CanvasJS.Chart("chartContainer", {
-        
-              title:{
-                text: "INITIAL COIN OFFERING"              
-              },
-              data: [//array of dataSeries              
-                { //dataSeries object
-        
-                 /*** Change type "column" to "bar", "area", "line" or "pie"***/
-                 type: "column",
-                 dataPoints: [
-                 { label: "Round 1 (800K)", y: 0.75 },
-                 { label: "Round 2 (1m)", y: 0.85 },
-                 { label: "Round 3(1.2m)", y: 0.95 },                                    
-                 { label: "Round 4(1.4m)", y: 1.05 },
-                 { label: "Round 5(1.6m)", y: 1.15 }
-                 ]
+        $("#chart-container").insertFusionCharts({
+            type: "column2d",
+            width: "400",
+            height: "350",
+            dataFormat: "json",
+            dataSource: {
+                chart: {
+                    caption: "Harry's SuperMart",
+                    subCaption: "Top 5 stores in last month by revenue",
+                    numberPrefix: "$",
+                    theme: "ocean"
+                },
+                data: [{
+                    label: "Bakersfield Central",
+                    value: "880000"
+                }, {
+                    label: "Garden Groove harbour",
+                    value: "730000"
+                }, {
+                    label: "Los Angeles Topanga",
+                    value: "590000"
+                }, {
+                    label: "Compton-Rancho Dom",
+                    value: "520000"
+                }, {
+                    label: "Daly City Serramonte",
+                    value: "330000"
+                }]
             }
-            ],
-         /** Set axisY properties here*/
-            axisY:{
-              prefix: "$",
-            }    
-          });
-        
-            chart.render();
-          }
+        });
     </script>
 
-    <script type="text/javascript" src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 
     <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.css" />
     <script src="//cdnjs.cloudflare.com/ajax/libs/cookieconsent2/3.0.3/cookieconsent.min.js"></script>
@@ -2820,7 +2821,8 @@
             </div>
             <div data-silex-type="html" class="editable-style silex-id-1515712063010-2 html-element" data-silex-id="silex-id-1515712063010-2" style="">
                 <div class="silex-element-content">
-                    <div id="chartContainer" style="height: 300px; width: 100%;"></div>
+                    <div id="chart-container">
+                    </div>
                 </div>
             </div>
         </div>
