@@ -1742,10 +1742,12 @@
 
         <div data-silex-type="html" class="editable-style silex-id-1515704335581-2 html-element page-home-page paged-element" data-silex-id="silex-id-1515704335581-2" style="">
             <div class="silex-element-content">
-                <form name="randform">
-                    <input type="button" value="Create Random String" onclick="randomString();">&nbsp;
-                    <input type="text" name="randomfield" value="" onload="randomString();">&nbsp;&gt;
-                </form>
+                <div onload="document.getElementById('form1').click();">
+                    <form name="randform" id="form1">
+                        <input type="button" value="Create Random String" onclick="randomString();">&nbsp;
+                        <input type="text" name="randomfield" value="" onload="randomString();">&nbsp;&gt;
+                    </form>
+                </div>
             </div>
         </div>
     </div>
