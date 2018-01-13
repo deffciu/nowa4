@@ -182,7 +182,17 @@
             transition: margin 0.3s, height 0.3s;
         }
     </style>
-    <script type="text/javascript" class="silex-script"></script>
+    <script type="text/javascript" class="silex-script">
+        $(function() {
+          $('#demo').on('click', function( e ) {
+            Custombox.open({
+              target: '#modal',
+              effect: 'fadein'
+            });
+            e.preventDefault();
+          });
+        });
+    </script>
 
     <style class="silex-inline-styles" type="text/css">
         .silex-id-1439555806958-90 {
