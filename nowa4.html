@@ -1548,18 +1548,17 @@
             ]);
     
             var options = {
+              chartArea: {
+                  backgroundColor: {
+                      stroke: '#4322c0',
+                      strokeWidth: 3,
+                  }
               hAxis: {textStyle:{color: 'white', fontName: 'Roboto'}, title: '',  titleTextStyle: {color: '#222'}},
               vAxis: {textStyle:{color: 'white', fontName: 'Roboto'}, format: '$#', minValue: 0},
               backgroundColor: 'transparent',
               legend: {position: 'top', maxLines: 2},
               areaOpacity: 0.3,
               colors:['6fa8dc','6fa8dc'],
-              chartArea: {
-                  backgroundColor: {
-                      stroke: '#4322c0',
-                      strokeWidth: 3,
-                  }
-              
             };
     
             var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
