@@ -1554,15 +1554,15 @@
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
               ['', ''],
-              ['420',  14.02],
-              ['555',  15.02],
-              ['665',  16.02],
-              ['777',  17.02]
+              ['15.02',  420.34],
+              ['16.02',  780.12],
+              ['17.02',  2123.53],
+              ['18.02',  8000.22]
             ]);
     
             var options = {
-              hAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, format: '$#.###', title: '',  titleTextStyle: {color: '#222'}},
-              vAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, minValue: 0},
+              hAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, title: '',  titleTextStyle: {color: '#222'}},
+              vAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, format: '$#.###', minValue: 0},
               backgroundColor: 'transparent',
               legend: {position: 'none', maxLines: 2},
               areaOpacity: 0.3,
