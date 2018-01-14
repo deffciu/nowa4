@@ -1557,8 +1557,11 @@
           google.charts.setOnLoadCallback(drawChart);
     
           function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['', ''],
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn('string', 'Year');
+        dataTable.addColumn('number', 'Sales');
+        dataTable.addColumn({type: 'string', role: 'tooltip'});
+        dataTable.addRows([
               ['15.02',  420.34],
               ['16.02',  780.12],
               ['17.02',  2123.53],
