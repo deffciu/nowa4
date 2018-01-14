@@ -1609,7 +1609,7 @@
     
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Total paid'],
+          ['Date', 'Total paid'],
           ['15.02',  1000],
           ['16.02',  1250],
           ['17.02',  2300],
@@ -1625,6 +1625,7 @@
               colors:['6fa8dc','6fa8dc'],
               curveType: 'function',
               focusTarget: 'category'
+              pointSize: 7,
             };
     
             var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
