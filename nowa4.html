@@ -1562,14 +1562,20 @@
           google.charts.setOnLoadCallback(drawChart);
     
       function drawChart() {
-        var data = google.visualization.arrayToDataTable([
-            dataTable.addColumn({type: 'string', role: 'tooltip'});
-          ['Year', 'Paid out'],
-          ['2013',  1000,  '$600K in our first year!'],
-          ['2014',  1170],
-          ['2015',  660],
-          ['2016',  1030]
-        ]);
+  var dataTable = new google.visualization.DataTable();
+  dataTable.addColumn('string', 'Year');
+  dataTable.addColumn('number', 'USA');
+  dataTable.addColumn({type: 'string', role: 'annotation'});
+  dataTable.addColumn({type: 'string', role: 'annotationText', p: {html:true}});
+  dataTable.addColumn('number', 'China');
+  dataTable.addColumn('number', 'UK');
+  dataTable.addRows([
+    ['2000',  94, '',  '', 58, 28],
+    ['2004', 101, '',  '', 63, 30],
+    ['2008', 110, 'An all time high!', '<img width=100px src="https://upload.wikimedia.org/wikipedia/commons/2/28/Flag_of_the_USA.svg">', 100, 47],
+    ['2012', 104, '',  '', 88, 65]
+  ]);
+
     
             var options = {
               hAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, title: '',  titleTextStyle: {color: '#222'}},
