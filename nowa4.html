@@ -1563,6 +1563,7 @@
     
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
+                dataTable.addColumn({type: 'string', role: 'tooltip'});
           ['Year', 'Paid out'],
           ['2013',  1000],
           ['2014',  1170],
@@ -1579,6 +1580,7 @@
               colors:['6fa8dc','6fa8dc'],
               pointSize: 8,
               curveType: 'function',
+              focusTarget: 'category'
             };
     
             var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
