@@ -1613,18 +1613,24 @@
     
           function drawChart() {
             var data = google.visualization.arrayToDataTable([
-              ['Date', 'Sales'],
+              ['Date', 'Total Paid'],
               ['15.02',  100],
               ['16.02',  1170],
               ['17.02',  660],
               ['18.02',  1030]
             ]);
     
-            var options = {
-              title: 'Company Performance',
-              hAxis: {title: 'Year',  titleTextStyle: {color: '#333'}},
-              vAxis: {minValue: 0}
-            };
+                var options = {
+                  hAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, title: '',  titleTextStyle: {color: '#222'}},
+                  vAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, format: '$#.###', minValue: 0},
+                  backgroundColor: 'transparent',
+                  legend: {position: 'none', maxLines: 2},
+                  areaOpacity: 0.3,
+                  colors:['6fa8dc','6fa8dc'],
+                  curveType: 'function',
+                  focusTarget: 'category',
+                  pointSize: 7,
+                };
     
             var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
             chart.draw(data, options);
