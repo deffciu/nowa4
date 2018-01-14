@@ -1611,25 +1611,24 @@
         google.charts.load('current', {'packages':['corechart']});
           google.charts.setOnLoadCallback(drawChart);
     
-          function drawChart() {
-            var data = google.visualization.arrayToDataTable([
-              ['Date', 'Total Paid'],
-              ['15.02',  100],
-              ['16.02',  1170],
-              ['17.02',  660],
-              ['18.02',  1030]
-            ]);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Date', 'Total paid'],
+          ['15.02',  1000],
+          ['16.02',  1250],
+          ['17.02',  2300],
+          ['18.02',  4253]
+        ]);
     
             var options = {
-                  hAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, title: '',  titleTextStyle: {color: '#222'}},
-                  vAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, format: '$#.###', minValue: 0},
-                  backgroundColor: 'transparent',
-                  legend: {position: 'none', maxLines: 2},
-                  areaOpacity: 0.3,
-                  colors:['6fa8dc','6fa8dc'],
-                  pointSize: 7,
+              hAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, title: '',  titleTextStyle: {color: '#222'}},
+              vAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'}, format: '$#.###', minValue: 0},
+              backgroundColor: 'transparent',
+              legend: {position: 'none', maxLines: 2},
+              areaOpacity: 0.3,
+              colors:['6fa8dc','6fa8dc'],
+              pointSize: 7,
             };
-    
             var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
             chart.draw(data, options);
           }
