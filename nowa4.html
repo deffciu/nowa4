@@ -187,8 +187,8 @@
             text-decoration: none;
         }
         
-        a.effect-box:after,
-        a.effect-box:before {
+        a:after,
+        a:before {
             content: '';
             position: absolute;
             left: 0;
@@ -201,23 +201,22 @@
             transition: opacity 0.35s, transform 0.35s;
         }
         
-        a:after {
-            content: '';
-            position: absolute;
-            left: 0;
-            display: inline-block;
-            height: 1em;
-            width: 100%;
+        a.asd:before {
+            border-left: 1px solid;
+            border-right: 1px solid;
+            -webkit-transform: scale(1, 0);
+            transform: scale(1, 0);
+        }
+        
+        a.asd:after {
             border-bottom: 1px solid;
-            margin-top: 10px;
-            opacity: 0;
-            -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
-            transition: opacity 0.35s, transform 0.35s;
+            border-top: 1px solid;
             -webkit-transform: scale(0, 1);
             transform: scale(0, 1);
         }
         
-        a:hover:after {
+        a:hover:after,
+        a:hover:before {
             opacity: 1;
             -webkit-transform: scale(1);
             transform: scale(1);
