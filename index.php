@@ -1,5 +1,4 @@
 <?php 
-/* Main page with two forms: sign up and log in */
 require 'db.php';
 session_start();
 ?>
@@ -7,7 +6,7 @@ session_start();
 <html>
 <head>
   <title>Sign-Up/Login Form</title>
-  <?php include 'css/css.html'; ?>
+  <?php include 'css_log.html'; ?>
 </head>
 
 <?php 
@@ -109,7 +108,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')
 </div> <!-- /form -->
   <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 
-    <script src="js/index.js"></script>
+    <script src="index.js"></script>
 
 </body>
 </html>
