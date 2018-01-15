@@ -226,7 +226,15 @@
             transform: rotatey(-5deg) rotatex(15deg) scale(1.25);
         }
     </style>
-    <script type="text/javascript" class="silex-script"></script>
+    <script type="text/javascript" class="silex-script">
+        $( document ).ready( function()
+        {
+        	$( '.buzz' ).each( function()
+        	{
+        		$( this ).attr( 'data-buzz' , $( this ).text() );
+        	} );
+        } );
+    </script>
 
     <style class="silex-inline-styles" type="text/css">
         .silex-id-1439555806958-90 {
