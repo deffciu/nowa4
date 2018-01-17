@@ -240,20 +240,7 @@
             background-color: #527ca3;
         }
     </style>
-    <script type="text/javascript" class="silex-script">
-        $(document).ready(function () {
-            var HeightDiv = $("div").height();
-            var HeightTable = $("table").height();
-            if (HeightTable > HeightDiv) {
-                var FontSizeTable = parseInt($("table").css("font-size"), 10);
-                while (HeightTable > HeightDiv && FontSizeTable > 5) {
-                    FontSizeTable--;
-                    $("table").css("font-size", FontSizeTable);
-                    HeightTable = $("table").height();
-                }
-            }
-        });
-    </script>
+    <script type="text/javascript" class="silex-script"></script>
 
     <style class="silex-inline-styles" type="text/css">
         .silex-id-1439555806958-90 {
@@ -3021,79 +3008,76 @@
             </div>
             <div data-silex-type="html" class="editable-style silex-id-1515001686086-1 html-element" data-silex-id="silex-id-1515001686086-1" style="">
                 <div class="silex-element-content">
-                    <div style="width:400px; height:250px;overflow:hidden">
-
-                        <table bordercolor="gray" cellspacing="10" width="830px" border="1">
-                            <tbody>
-                                <tr style="font-family: 'Fjalla One', sans-serif;">
-                                    <th bgcolor="white">
-                                        <font color="0c2a40">Capital invested</font>
-                                    </th>
-                                    <th bgcolor="white">
-                                        <font color="0c2a40">Daily interest rate bonus</font>
-                                    </th>
-                                    <th bgcolor="white">
-                                        <font color="0c2a40">Initial capital release</font>
-                                    </th>
-                                </tr>
-                                <tr bgcolor="0c2a40">
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">$100-$999</font>
-                                    </td>
-                                    <td valign="center" align="center">
-                                        <font color="white">Scheduled interest rate +0.04%</font>
-                                    </td>
-                                    <td valign="center" align="center">
-                                        <font color="white">After 310 days</font>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="0c2a40">
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">$1000-$4999</font>
-                                    </td>
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">Scheduled interest rate + 0.08%</font>
-                                    </td>
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">After 260 days</font>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="0c2a40">
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">$5000-$9999</font>
-                                    </td>
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">Scheduled interest rate + 0.12%</font>
-                                    </td>
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">After 220 days</font>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="0c2a40">
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">$10000-$24999</font>
-                                    </td>
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">Scheduled interest rate + 0.15%</font>
-                                    </td>
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">After 160 days</font>
-                                    </td>
-                                </tr>
-                                <tr bgcolor="0c2a40">
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">$25000-$50000</font>
-                                    </td>
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">Scheduled interest rate + 0.20%</font>
-                                    </td>
-                                    <td color="white" valign="center" align="center">
-                                        <font color="white">After 110 days</font>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                    <table bordercolor="gray" cellspacing="10" width="830px" border="1">
+                        <tbody>
+                            <tr style="font-family: 'Fjalla One', sans-serif;">
+                                <th bgcolor="white">
+                                    <font color="0c2a40">Capital invested</font>
+                                </th>
+                                <th bgcolor="white">
+                                    <font color="0c2a40">Daily interest rate bonus</font>
+                                </th>
+                                <th bgcolor="white">
+                                    <font color="0c2a40">Initial capital release</font>
+                                </th>
+                            </tr>
+                            <tr bgcolor="0c2a40">
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">$100-$999</font>
+                                </td>
+                                <td valign="center" align="center">
+                                    <font color="white">Scheduled interest rate +0.04%</font>
+                                </td>
+                                <td valign="center" align="center">
+                                    <font color="white">After 310 days</font>
+                                </td>
+                            </tr>
+                            <tr bgcolor="0c2a40">
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">$1000-$4999</font>
+                                </td>
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">Scheduled interest rate + 0.08%</font>
+                                </td>
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">After 260 days</font>
+                                </td>
+                            </tr>
+                            <tr bgcolor="0c2a40">
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">$5000-$9999</font>
+                                </td>
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">Scheduled interest rate + 0.12%</font>
+                                </td>
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">After 220 days</font>
+                                </td>
+                            </tr>
+                            <tr bgcolor="0c2a40">
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">$10000-$24999</font>
+                                </td>
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">Scheduled interest rate + 0.15%</font>
+                                </td>
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">After 160 days</font>
+                                </td>
+                            </tr>
+                            <tr bgcolor="0c2a40">
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">$25000-$50000</font>
+                                </td>
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">Scheduled interest rate + 0.20%</font>
+                                </td>
+                                <td color="white" valign="center" align="center">
+                                    <font color="white">After 110 days</font>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
             <div data-silex-type="html" class="editable-style html-element silex-id-1515004126663-10" data-silex-id="silex-id-1515004126663-10" style="">
