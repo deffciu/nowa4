@@ -276,6 +276,18 @@
             top: 0;
             width: 100%;
         }
+        
+        button::before,
+        button::after {
+            background: #fff;
+            content: '';
+            position: absolute;
+            z-index: -1;
+        }
+        
+        button:hover {
+            color: #2ecc71;
+        }
     </style>
     <script type="text/javascript" class="silex-script"></script>
 
