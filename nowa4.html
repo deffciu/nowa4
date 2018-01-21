@@ -262,14 +262,7 @@
             border-radius: 10px;
         }
     </style>
-    <script type="text/javascript" class="silex-script">
-        function myFunction() {
-          var copyText = document.getElementById("myInput");
-          copyText.select();
-          document.execCommand("Copy");
-          alert("Copied the text: " + copyText.value);
-        }
-    </script>
+    <script type="text/javascript" class="silex-script"></script>
 
     <style class="silex-inline-styles" type="text/css">
         .silex-id-1439555806958-90 {
@@ -3522,8 +3515,16 @@
                 <div class="silex-element-content">
                     <form name="randform">
                         <button id="gen" type="button" onclick="randomString();">GENERATE</button>
-                        <input type="text" name="randomfield" value="" readonly="">
+                        <input id="gen1" type="text" name="randomfield" value="" readonly="">
                         <button onclick="myFunction()">Copy text</button>
+                        <script>
+                            function myFunction() {
+                              var copyText = document.getElementById("gen1");
+                              copyText.select();
+                              document.execCommand("Copy");
+                              alert("Copied the text: " + copyText.value);
+                            }
+                        </script>
                     </form>
                 </div>
             </div>
