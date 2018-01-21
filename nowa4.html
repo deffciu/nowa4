@@ -241,7 +241,6 @@
         }
         
         #gen {
-            border-color: transparent;
             border-width: 0px;
             padding: 10px 20px;
             font-size: 18px;
@@ -249,7 +248,7 @@
             font-weight: bold;
             color: white;
             font-family: 'Roboto';
-            border-radius: 10px;
+            border-radius: 2px;
         }
         
         input[type=text] {
@@ -262,6 +261,20 @@
             color: white;
             font-family: 'Roboto';
             border-radius: 10px;
+        }
+        
+        #gen::after {
+            height: 0;
+            left: 50%;
+            top: 50%;
+            width: 0;
+        }
+        
+        #gen:hover:after {
+            height: 100%;
+            left: 0;
+            top: 0;
+            width: 100%;
         }
     </style>
     <script type="text/javascript" class="silex-script"></script>
