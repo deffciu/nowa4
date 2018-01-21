@@ -240,33 +240,20 @@
             background-color: #527ca3;
         }
         
-        #gen {
-            border-width: 0px;
-            padding: 10px 20px;
-            font-size: 18px;
-            background-color: #2b80b0;
-            font-weight: bold;
-            color: white;
-            font-family: 'Roboto';
-            border-radius: 2px;
-        }
-        
         input[type=text] {
+            border-color: #2b80b0;
+            border-style: solid;
+            border-width: 10px;
             width: 200px;
             border-width: 0px;
             padding: 10px 20px;
             font-size: 18px;
-            background-color: #2b80b0;
+            background-color: #2a9cb5;
             font-weight: bold;
             color: white;
             font-family: 'Roboto';
             border-radius: 10px;
         }
-        
-        .container {
-            padding: 2em;
-        }
-        /* GENERAL BUTTON STYLING */
         
         button,
         button::after {
@@ -289,7 +276,6 @@
         
         button::before,
         button::after {
-            background: red;
             content: '';
             position: absolute;
             z-index: -1;
@@ -297,28 +283,6 @@
         
         button:hover {
             color: #2ecc71;
-        }
-        
-        .btn-4::before {
-            height: 100%;
-            left: 0;
-            top: 0;
-            width: 100%;
-        }
-        
-        .btn-4::after {
-            background: #2ecc71;
-            height: 100%;
-            left: 0;
-            top: 0;
-            width: 100%;
-        }
-        
-        .btn-4:hover:after {
-            height: 0;
-            left: 50%;
-            top: 50%;
-            width: 0;
         }
     </style>
     <script type="text/javascript" class="silex-script"></script>
@@ -3577,7 +3541,7 @@
             <div data-silex-type="html" class="editable-style silex-id-1516491004917-5 html-element" data-silex-id="silex-id-1516491004917-5" style="">
                 <div class="silex-element-content">
                     <form name="randform">
-                        <button type="button" class="btn-4" onclick="randomString();">GENERATE</button>
+                        <button type="button" onclick="randomString();">GENERATE</button>
                         <input id="gen1" type="text" name="randomfield" value="" readonly="">
                         <button type="button" onclick="return myFunction()">Copy text</button>
                         <script>
