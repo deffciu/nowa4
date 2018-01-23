@@ -1,0 +1,126 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>dinbits blockchain media - Ticker Widget</title>
+<meta charset="utf-8" />
+<script type="text/javascript">
+//<![CDATA[
+window.__cfRocketOptions = {byc:0,p:0,petok:"0e1a7859383f0b78c14a9f39e2f2c70865da629d-1516739984-1800"};
+//]]>
+</script>
+<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/b7ef205d/cloudflare-static/rocket.min.js"></script>
+<script type="text/rocketscript" data-rocketsrc="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script data-rocketsrc="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.js" type="text/rocketscript"></script>
+<script data-rocketsrc="https://cdnjs.cloudflare.com/ajax/libs/jquery-color/2.1.2/jquery.color.js" type="text/rocketscript"></script>
+<script data-rocketsrc="https://cdnjs.cloudflare.com/ajax/libs/us-map/1.0.1/jquery.usmap.js" type="text/rocketscript"></script>
+<script data-rocketsrc="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" type="text/rocketscript"></script>
+<script data-rocketsrc="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js " type="text/rocketscript"></script>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+<style>
+        @-webkit-keyframes ticker {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                visibility: visible;
+            }
+
+            100% {
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+            }
+        }
+
+        @keyframes ticker {
+            0% {
+                -webkit-transform: translate3d(0, 0, 0);
+                transform: translate3d(0, 0, 0);
+                visibility: visible;
+            }
+
+            100% {
+                -webkit-transform: translate3d(-100%, 0, 0);
+                transform: translate3d(-100%, 0, 0);
+            }
+        }
+
+        .ticker-wrap {
+            position: fixed;
+            top: 10px;
+            width: 900px;
+            overflow: hidden;
+            height: 2rem;
+            background-color: transparent;
+        }
+
+        .ticker {
+            display: inline-block;
+            height: 2rem;
+            line-height: 2rem;
+            white-space: nowrap;
+            padding-left: 900px;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+            -webkit-animation-name: ticker;
+            animation-name: ticker;
+            -webkit-animation-duration: 30s;
+            animation-duration: 30s;
+            &__item;
+
+        {
+            display: inline-block;
+            padding: 0 100%;
+            font-size: 2rem;
+            color: white;
+        }
+
+        }
+
+        body {
+            padding-bottom: 2rem;
+        }
+
+        h1, h2, p {
+            padding: 0 5%;
+        }
+    </style>
+<script data-rocketsrc="Scripts/dinbits.js" type="text/rocketscript"></script>
+<script type="text/rocketscript">$(document).ready(function () { GetMarket(); setInterval(function () { GetMarket(); }, 120000); }); </script>
+</head>
+<body style="background-color: transparent">
+<div class="ticker-wrap">
+<div class="ticker">
+<div class="ticker__item" style="font-family: Arial;">
+<span id="asset" style="color: goldenrod; font-size: small; font-weight: bold;">BTC</span> <span id="btc_trend" style="color: lightgreen; font-size: small; font-weight: bold;">▲</span>
+<span style="color: grey; font-size: x-small;">USD</span> <span id="btc_last" style="color: white; font-size: medium; font-weight: bold;"></span>
+<span style="color: rgb(230, 110, 110); font-size: x-small; font-weight: bold;" id="btc_lo"></span> <span style="font-weight: bold; color: rgb(67, 212, 86); font-size: x-small;" id="btc_hi"></span>
+<span style="color: white; font-size: medium; font-weight: bold;"> </span>&nbsp;
+
+<span style="color: white; font-size: medium; font-weight: bold;"> </span>&nbsp; <span id="asset" style="color: goldenrod; font-size: small; font-weight: bold;">BCH</span><span id="r" style="color: lightgreen; font-size: small; font-weight: bold;">▲</span>
+<span style="color: grey; font-size: x-small;">USD</span> <span id="bch_lst" style="color: white; font-size: medium; font-weight: bold;"></span>
+<span style="color: rgb(230, 110, 110); font-size: x-small; font-weight: bold;" id="bhc_lo"></span> <span style="font-weight: bold; color: rgb(67, 212, 86); font-size: x-small;" id="bhc_hi"></span>
+<span style="color: white; font-size: medium; font-weight: bold;"> </span>&nbsp;
+<span id="asset" style="color: goldenrod; font-size: small; font-weight: bold;">ETH</span><span id="trend" style="color: lightgreen; font-size: small; font-weight: bold;">▲</span>
+<span style="color: grey; font-size: x-small;">USD</span> <span id="eth_lst" style="color: white; font-size: medium; font-weight: bold;"></span>
+<span style="color: white; font-size: medium; font-weight: bold;"> </span>&nbsp;
+<span id="asset" style="color: goldenrod; font-size: small; font-weight: bold;">ZEC</span><span id="trend" style="color: lightgreen; font-size: small; font-weight: bold;">▲</span>
+<span style="color: grey; font-size: x-small;">USD</span> <span id="zec_lst" style="color: white; font-size: medium; font-weight: bold;"></span>
+<span style="color: white; font-size: medium; font-weight: bold;"> </span>&nbsp;
+<span id="asset" style="color: goldenrod; font-size: small; font-weight: bold;">DASH</span><span id="trend" style="color: lightgreen; font-size: small; font-weight: bold;">▲</span>
+<span style="color: grey; font-size: x-small;">USD</span> <span id="dash_lst" style="color: white; font-size: medium; font-weight: bold;"></span>
+<span style="color: white; font-size: medium; font-weight: bold;"> </span>&nbsp;
+<span id="asset" style="color: goldenrod; font-size: small; font-weight: bold;">LTC</span><span id="trend" style="color: lightgreen; font-size: small; font-weight: bold;">▲</span>
+<span style="color: grey; font-size: x-small;">USD</span> <span id="ltc_lst" style="color: white; font-size: medium; font-weight: bold;"></span>
+<span style="color: white; font-size: medium; font-weight: bold;"> </span>&nbsp;
+<span id="asset" style="color: goldenrod; font-size: small; font-weight: bold;">ETC</span><span id="trend" style="color: lightgreen; font-size: small; font-weight: bold;">▲</span>
+<span style="color: grey; font-size: x-small;">USD</span> <span id="etc_lst" style="color: white; font-size: medium; font-weight: bold;"></span>
+<span style="color: white; font-size: medium; font-weight: bold;"> </span>&nbsp;
+<span id="asset" style="color: goldenrod; font-size: small; font-weight: bold;">XMR</span><span id="trend" style="color: lightgreen; font-size: small; font-weight: bold;">▲</span>
+<span style="color: grey; font-size: x-small;">USD</span> <span id="xmr_lst" style="color: white; font-size: medium; font-weight: bold;"></span>&nbsp;
+</div>
+</div>
+</div>
+</body>
+</html>
