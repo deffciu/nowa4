@@ -2412,14 +2412,15 @@
           var options = {
             backgroundColor: 'transparent',
             title: "",
-                gridlines: {
-                    color: 'transparent'
-            },
             width: 650,
             height: 400,
             bar: {groupWidth: "95%"},
             legend: { position: "none" },
-            vAxis: { textPosition: 'none' },
+            vAxis: {
+                gridlines: {
+                    color: 'transparent'
+                }
+            },
           };
           var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
           chart.draw(view, options);
