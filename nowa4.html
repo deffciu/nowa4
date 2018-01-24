@@ -2416,12 +2416,12 @@
             height: 400,
             bar: {groupWidth: "95%"},
             legend: { position: "none" },
-            vAxis: {
+            vAxis: {textStyle:{color: 'white', fontName: 'Fjalla One'},
                 gridlines: {
                     color: 'transparent'
                 }
             },
-            textStyle:{color: 'white', fontName: 'Fjalla One'},
+
           };
           var chart = new google.visualization.ColumnChart(document.getElementById("columnchart_values"));
           chart.draw(view, options);
